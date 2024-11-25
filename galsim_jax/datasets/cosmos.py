@@ -159,7 +159,9 @@ class Cosmos(tfds.core.GeneratorBasedBuilder):
             kpsf_imag = kpsf.imag
 
             # Pixel noise standard deviation
-            noise_std = np.sqrt(cosmos_stamp.noise.getVariance())
+            # noise_std = np.sqrt(cosmos_stamp.noise.getVariance())
+            # EC: modified line.
+            noise_std = np.sqrt(cosmos_gal.noise.getVariance())
             
             # Noise power spectrum
             # from
