@@ -25,6 +25,8 @@ from galsim_jax.utils import (
 
 from galsim_jax.convolution import convolve
 
+from galsim_jax.datasets import cosmos
+
 from jax.lib import xla_bridge
 from astropy.stats import mad_std
 from tensorflow_probability.substrates import jax as tfp
@@ -72,12 +74,12 @@ def main(_):
     # Checking for GPU access
     print("Device: {}".format(xla_bridge.get_backend().platform))
 
-    # Checking the GPU available
-    gpus = jax.devices("gpu")
-    print("Number of avaliable devices : {}".format(len(gpus)))
+    # # Checking the GPU available
+    # gpus = jax.devices("gpu")
+    # print("Number of avaliable devices : {}".format(len(gpus)))
 
-    # Ensure TF does not see GPU and grab all GPU memory.
-    tf.config.set_visible_devices([], device_type="GPU")
+    # # Ensure TF does not see GPU and grab all GPU memory.
+    # tf.config.set_visible_devices([], device_type="GPU")
 
     # Loading the dataset and transforming it to NumPy Arrays
     train_dset, info = tfds.load(name=FLAGS.dataset, with_info=True, split="train")
