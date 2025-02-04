@@ -282,7 +282,7 @@ def main(_):
     config.using_kl = False if FLAGS.reg_value == 0 else True
     config.latent_dim = latent_dim
     # config.type_model = FLAGS.experiment
-    config.commit_version = get_git_commit_version()
+    # config.commit_version = get_git_commit_version()
     config.act_fn = FLAGS.act_fn
     config.opt = FLAGS.opt
     config.resnet_blocks = FLAGS.resblocks
