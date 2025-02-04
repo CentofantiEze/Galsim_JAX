@@ -264,6 +264,7 @@ def main(_):
     wandb.init(
         project=FLAGS.project,
         name=FLAGS.name,
+        mode="offline",
         # tags="kl_reg={:.4f}".format(reg),
     )
 
