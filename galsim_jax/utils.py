@@ -55,7 +55,8 @@ def save_checkpoint(ckpt_path, state, step):
     artifact = wandb.Artifact(f"{wandb.run.id}-checkpoint", type="model")
     artifact.add_file(ckpt_path)
     wandb.log_artifact(
-        artifact, aliases=["best", f"step_{step}", f"commit_{get_git_commit_version()}"]
+        # artifact, aliases=["best", f"step_{step}", f"commit_{get_git_commit_version()}"]
+        artifact, aliases=["best", f"step_{step}"]
     )
 
 
