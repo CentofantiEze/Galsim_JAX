@@ -264,6 +264,7 @@ def main(_):
     wandb.init(
         project=FLAGS.project,
         name=FLAGS.name,
+        settings=wandb.Settings(init_timeout=120)
         # tags="kl_reg={:.4f}".format(reg),
     )
 
